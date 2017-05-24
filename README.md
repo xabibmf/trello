@@ -1,24 +1,68 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
++ userテーブルはdeviseを利用する。
 
-* Ruby version
+|Column|Type|Options|
+|:--|:-:|:--|
+|name|string|null: false|
+|initial|string|null: false|
+|self_introduction|text|-|
 
-* System dependencies
+### Association
 
-* Configuration
++ has_many :boards
 
-* Database creation
+## boards table
 
-* Database initialization
+|Column|Type|Options|
+|:--|:-:|:--|
+|manager|string|null: false|
+|name|string|null: false|
+|contracting|string|-|
+|website|string|-|
+|details|text|-|
+|color|string|null: false|
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
++ has_many :lists
++ belongs_to :user
 
-* Deployment instructions
+## lists table
 
-* ...
+|Column|Type|Options|
+|:--|:-:|:--|
+|name|string|null: false|
+|board_id|integer|null: false, foreign_key: true|
+
+### Association
+
++ has_many :cards
++ belongs_to :board
+
+## cards table
+
+|Column|Type|Options|
+|:--|:-:|:--|
+|name|string|null: false|
+|details|text|-|
+|list_id|string|null: false, foreign_key: true|
+
+### Association
+
++ has_many :activities
++ belongs_to :list
+
+## activities table
+
+|Column|Type|Options|
+|:--|:-:|:--|
+|memo|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|card_id|integer|null: false, foreign_key: true|
+
+### Association
+
++ belongs_to :cards
