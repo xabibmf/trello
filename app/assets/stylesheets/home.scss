@@ -65,7 +65,7 @@ html, body {
       font-size: 1pc;
       font-weight: 700;
       color: #fff;
-      background-color: blue;
+      @include board-color(0, 0, 255);
       height: 105px;
       margin-bottom: 15px;
       flex: 1 1 210px;
@@ -91,11 +91,14 @@ html, body {
         text-decoration: none;
         &:link { color: white; }
         &:visited { color: white; }
-        &:hover { color: white; }
+        &:hover {
+          color: white;
+          border-radius: 5px;
+        }
         &:active { color: white; }
       }
       &.new_board {
-        background-color: #E2E4E6;
+        @include board-color(226, 228, 230);
         .board_link {
           color: #8c8c8c;
           font-weight: 400;

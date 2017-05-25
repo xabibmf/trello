@@ -5,3 +5,10 @@
     content: '';
   }
 }
+
+@mixin board-color($colorR, $colorG, $colorB) {
+  background-color: rgba($colorR, $colorG, $colorB, 0.8);
+  .board_link:hover {
+    background-color: rgb($colorR, $colorG, $colorB);
+  }
+}
