@@ -1,7 +1,7 @@
 lock "3.8.1"
 
 set :application, "trello"
-set :repo_url, "git@example.com:xabibmf/trello.git"
+set :repo_url, "git@github.com:xabibmf/trello.git"
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vender/bundle', 'public/system', 'public/uploads')
 
