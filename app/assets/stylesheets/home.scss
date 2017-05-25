@@ -1,0 +1,54 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  height: 30px;
+  width: calc(100vw - 25px);
+  background-color: #026AA7;
+  padding: 5px;
+  &__title {
+    position: relative;
+    text-align: center;
+    line-height: 30px;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+  }
+  &__initial {
+    background-color: #d6dadc;
+    color: #4d4d4d;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px 6px 4px 4px;
+    font-size: 9pt;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+}
+
+.main {
+  padding: 60px 20px 0;
+  &__header {
+    height: 40px;
+    @include clearfix;
+    &__icon {
+      float: left;
+      line-height: 23px;
+      margin-right: 13px;
+    }
+    &__name {
+      float: left;
+      line-height: 24px;
+    }
+  }
+}
