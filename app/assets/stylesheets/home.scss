@@ -61,6 +61,8 @@ html, body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
     &__board {
       font-size: 1pc;
       font-weight: 700;
@@ -68,7 +70,7 @@ html, body {
       @include board-color(0, 0, 255);
       height: 105px;
       margin-bottom: 15px;
-      flex: 1 1 210px;
+      flex: 1 1 240px;
       position: relative;
       border-radius: 5px;
       &:not(:last-child) {
