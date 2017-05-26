@@ -1,0 +1,29 @@
+.account-page
+  %h2 Trelloアカウントを作成する
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :name
+      -# %br/
+      = f.text_field :name, autofocus: true, placeholder: "たとえばTuranga Leela", size: 45, class: "textbox"
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, placeholder: "たとえばleela@planetexpress.nnyc", size: 45, class: "textbox"
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} 文字以上)
+      %br/
+      = f.password_field :password, autocomplete: "off", size: 45, class: "textbox"
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "off", size: 45, class: "textbox"
+    .field
+      = f.text_field :initial, type: "hidden"
+    .actions
+      = f.submit "アカウントを作成", class: "user-submit-button"
+  %span.text すでにアカウントをお持ちの場合は
+  = render "devise/shared/links"
