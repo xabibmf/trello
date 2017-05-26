@@ -1,0 +1,55 @@
+.account-page {
+  max-width: 400px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 1.777em;
+    line-height: 1.2em;
+    margin-top: 1.6em;
+    font-weight: bold;
+  }
+
+  .field {
+    margin-top: 15px;
+  }
+
+  .textbox{
+    background-color: #edeff0;
+    border-radius: 4px;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid #cdd2d4;
+  }
+
+  .user-submit-button {
+    background-color: #e2e4e6;
+    color: #8c8c8c;
+    cursor: default;
+    margin: 25px 0 20px;
+    width: 170px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .button-active {
+    background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
+    opacity: 0.9;
+    box-shadow: 0 2px 0 #3f6f21;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+
+  .text {
+    color: #999;
+    &.text_link {
+      &:hover {
+        color: #444;
+      }
+    }
+  }
+}
