@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
+gem 'erb2haml'
 gem 'font-awesome-rails'
 
 group :development, :test do
@@ -19,7 +20,6 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'erb2haml'
 end
 
 group :development do
