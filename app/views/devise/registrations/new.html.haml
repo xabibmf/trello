@@ -21,6 +21,8 @@
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "off", size: 45, class: "textbox"
+    .field
+      = f.text_field :initial, type: "hidden"
     .actions
       = f.submit "アカウントを作成", class: "user-submit-button"
   %span.text すでにアカウントをお持ちの場合は
