@@ -6,6 +6,11 @@ html, body {
   overflow: hidden;
 }
 
+.link-icon:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 .header {
   position: fixed;
   height: 30px;
@@ -44,6 +49,8 @@ html, body {
   padding: 20px 20px 0;
   height: calc(100vh - 60px);
   &__header {
+    max-width: 1200px;
+    margin: 0 auto;
     height: 40px;
     @include clearfix;
     &__icon {
