@@ -13,7 +13,7 @@ ja:
       message: メッセージ
     attributes:
       user:
-        email: メール
+        email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認用）
         name: 名前
