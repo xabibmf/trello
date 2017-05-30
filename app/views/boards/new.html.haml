@@ -70,3 +70,18 @@
     %li.board-list__board.empty
     %li.board-list__board.empty
     %li.board-list__board.empty
+  .pop-over
+    .pop-over__header
+      %span Takuma
+      = fa_icon "times"
+    .pop-over__content
+      %ul.content-list
+        %li.content-list__item
+          = link_to "プロフィール", "/", class: "item__link"
+        %li.content-list__item
+          = link_to "カード", "/", class: "item__link"
+        %li.content-list__item
+          = link_to "設定", "/", class: "item__link"
+      %ul.content-list
+        %li.content-list__item
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "item__link"
