@@ -180,6 +180,27 @@ html, body {
       &.is-shown {
         display: block;
       }
+      &__content {
+        margin: 7px 0 0;
+        padding: 7px 0 0;
+        border-top: 1px solid #D6DADC;
+        .board-submit-button {
+          background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
+          opacity: 0.9;
+          box-shadow: 0 2px 0 #3f6f21;
+          color: #fff;
+          cursor: pointer;
+          border: none;
+          font-weight: bold;
+          margin-top: 10px;
+          width: 90px;
+          height: 35px;
+          border-radius: 3px;
+          &:hover {
+            opacity: 1.0;
+          }
+        }
+      }
     }
   }
 }
