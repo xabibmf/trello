@@ -1,36 +1,49 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "off"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.header
+  .header__title Trello
+  .header__initial.link-icon T
+.main.edit-user
+  .account-page
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+      .field
+        = f.label :name
+        %br/
+        = f.text_field :name, autofocus: true, size: 45, class: "textbox"
+      .field
+        = f.label :initial
+        %br/
+        = f.text_field :initial, size: 45, class: "textbox"
+      .field
+        = f.label :self_introduction
+        %br/
+        = f.text_area :self_introduction, size: "44x20", class: "textarea"
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, size: 45, class: "textbox"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+      .field
+        = f.label :password
+        %i (変更しない場合は空にしてください)
+        %br/
+        = f.password_field :password, autocomplete: "off", size: 45, class: "textbox"
+        - if @minimum_password_length
+          %br/
+          %em
+            最低
+            = @minimum_password_length
+            文字
+      .field
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off", size: 45, class: "textbox"
+      .field
+        = f.label :current_password
+        %br/
+        = f.password_field :current_password, autocomplete: "off", size: 45, class: "textbox"
+      .actions
+        = f.submit "保存", class: "preserve-button"
+    .cancel-button
+      = link_to "キャンセル", :back, class: "cancel-button__text"
