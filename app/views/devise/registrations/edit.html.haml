@@ -1,6 +1,4 @@
-.header
-  .header__title Trello
-  .header__initial.link-icon T
+= render "shared/header"
 .main.edit-user
   .account-page
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
@@ -47,3 +45,4 @@
         = f.submit "保存", class: "preserve-button"
     .cancel-button
       = link_to "キャンセル", :back, class: "cancel-button__text"
+  = render "shared/popover"
