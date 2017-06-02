@@ -14,4 +14,8 @@ $(document).on('turbolinks:load', function() {
   $('.pop-over__board .fa-times').on('click', function() {
     $('.pop-over__board').removeClass("is-shown");
   });
+
+  $('#new_board').on('submit', function() {
+    $('.pop-over__board').removeClass("is-shown");
+  });
 });
