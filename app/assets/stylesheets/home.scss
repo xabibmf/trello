@@ -75,7 +75,34 @@ html, body {
       font-size: 1pc;
       font-weight: 700;
       color: #fff;
-      @include board-color(0, 0, 255);
+      @include board-color(0, 121, 191);
+      &.blue-content {
+        @include board-color(0, 121, 191);
+      }
+      &.orange-content {
+        @include board-color(210, 144, 52);
+      }
+      &.green-content {
+        @include board-color(81, 152, 57);
+      }
+      &.red-content {
+        @include board-color(176, 70, 50);
+      }
+      &.purple-content {
+        @include board-color(137, 96, 158);
+      }
+      &.pink-content {
+        @include board-color(205, 90, 145);
+      }
+      &.lightgreen-content {
+        @include board-color(75, 191, 107);
+      }
+      &.skyblue-content {
+        @include board-color(0, 174, 204);
+      }
+      &.grey-content {
+        @include board-color(131, 140, 145);
+      }
       height: 105px;
       margin-bottom: 15px;
       flex: 1 1 240px;

@@ -4,64 +4,7 @@
     = fa_icon "user-circle-o lg", class: "main__header__icon"
     %h2.main__header__name パーソナルボード
   %ul.board-list
-    %li.board-list__board
-      = link_to "board name1", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name2", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name3", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name4", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name5", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name6", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name7", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name8", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name9", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name10", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name11", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name12", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name13", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name14", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name15", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name16", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name17", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name18", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name19", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name20", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name21", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name22", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name23", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name24", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name25", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name26", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name27", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name28", "/", class: "board_link"
-    %li.board-list__board
-      = link_to "board name29", "/", class: "board_link"
+    = render partial: 'board', collection: @boards
     %li.board-list__board.new_board
       .board_link 新しいボードを作成
       = render "shared/popover-board", board: @board
