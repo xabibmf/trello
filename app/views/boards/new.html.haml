@@ -64,7 +64,7 @@
       = link_to "board name29", "/", class: "board_link"
     %li.board-list__board.new_board
       .board_link 新しいボードを作成
-      = render "shared/popover-board"
+      = render "shared/popover-board", board: @board
     %li.board-list__board.empty
     %li.board-list__board.empty
     %li.board-list__board.empty

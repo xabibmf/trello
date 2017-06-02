@@ -3,3 +3,8 @@
     %span ボードを作成
     = fa_icon "times"
   .pop-over__board__content
+    = form_for board do |f|
+      = f.label :name
+      %br/
+      = f.text_field :name
+      = f.submit '作成', class: "board-submit-button"
