@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   $('.header__initial').on('click', function() {
     $('.pop-over').addClass("is-shown");
   });
