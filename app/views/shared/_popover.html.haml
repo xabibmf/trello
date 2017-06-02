@@ -1,6 +1,7 @@
 .pop-over
   .pop-over__header
-    %span Takuma
+    %span
+      = current_user.name
     = fa_icon "times"
   .pop-over__content
     %ul.content-list
