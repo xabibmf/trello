@@ -12,3 +12,9 @@
     background-color: rgb($colorR, $colorG, $colorB);
   }
 }
+
+@mixin scrolloff {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

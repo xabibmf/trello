@@ -48,6 +48,7 @@ html, body {
   margin-top: 40px;
   padding: 20px 20px 0;
   height: calc(100vh - 60px);
+  @include scrolloff;
   &__header {
     max-width: 1200px;
     margin: 0 auto;
@@ -116,6 +117,42 @@ html, body {
           font-size: 0.9rem;
         }
       }
+    }
+  }
+
+  .pop-over {
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #D6DADC;
+    border-bottom-color: #C4C9CC;
+    box-shadow: 0 1px 6px rgba(0,0,0,.15);
+    position: fixed;
+    width: 300px;
+    padding: 5px;
+    right: -9999px;
+    top: -9999px;
+    &__header {
+      position: relative;
+      i {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+      }
+    }
+
+    .content-list {
+      margin: 7px 0 0;
+      padding: 7px 0 0;
+      border-top: 1px solid #D6DADC;
+      &__item {
+        text-decoration: none;
+      }
+    }
+
+
+    &.is-shown {
+      right: 5px;
+      top: 45px;
     }
   }
 }

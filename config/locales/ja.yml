@@ -16,7 +16,10 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認用）
+        current_password: 現在のパスワード
         name: 名前
+        initial: イニシャル
+        self_introduction: 自己紹介
         created_at: 登録日
         updated_at: 更新日
       group:
