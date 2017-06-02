@@ -109,6 +109,7 @@ html, body {
       }
       &.new_board {
         @include board-color(226, 228, 230);
+        position: relative;
         .board_link {
           color: #8c8c8c;
           font-weight: 400;
@@ -129,8 +130,9 @@ html, body {
     position: fixed;
     width: 300px;
     padding: 5px;
-    right: -9999px;
-    top: -9999px;
+    right: 5px;
+    top: 45px;
+    display: none;
     &__header {
       position: relative;
       i {
@@ -149,10 +151,35 @@ html, body {
       }
     }
 
-
     &.is-shown {
-      right: 5px;
-      top: 45px;
+      display: block;
+    }
+
+    &__board {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #D6DADC;
+      border-bottom-color: #C4C9CC;
+      box-shadow: 0 1px 6px rgba(0,0,0,.15);
+      width: 300px;
+      padding: 5px;
+      color: #4d4d4d;
+      z-index: 100;
+      display: none;
+      &__header {
+        position: relative;
+        i {
+          position: absolute;
+          right: 3px;
+          top: 3px;
+        }
+      }
+      &.is-shown {
+        display: block;
+      }
     }
   }
 }

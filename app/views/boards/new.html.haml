@@ -63,7 +63,8 @@
     %li.board-list__board
       = link_to "board name29", "/", class: "board_link"
     %li.board-list__board.new_board
-      = link_to "新しいボードを作成", "/", class: "board_link"
+      .board_link 新しいボードを作成
+      = render "shared/popover-board"
     %li.board-list__board.empty
     %li.board-list__board.empty
     %li.board-list__board.empty
