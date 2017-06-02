@@ -111,6 +111,7 @@ html, body {
         @include board-color(226, 228, 230);
         position: relative;
         .board_link {
+          cursor: pointer;
           color: #8c8c8c;
           font-weight: 400;
           text-align: center;
