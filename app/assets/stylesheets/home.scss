@@ -76,33 +76,6 @@ html, body {
       font-weight: 700;
       color: #fff;
       @include board-color(0, 121, 191);
-      &.blue-content {
-        @include board-color(0, 121, 191);
-      }
-      &.orange-content {
-        @include board-color(210, 144, 52);
-      }
-      &.green-content {
-        @include board-color(81, 152, 57);
-      }
-      &.red-content {
-        @include board-color(176, 70, 50);
-      }
-      &.purple-content {
-        @include board-color(137, 96, 158);
-      }
-      &.pink-content {
-        @include board-color(205, 90, 145);
-      }
-      &.lightgreen-content {
-        @include board-color(75, 191, 107);
-      }
-      &.skyblue-content {
-        @include board-color(0, 174, 204);
-      }
-      &.grey-content {
-        @include board-color(131, 140, 145);
-      }
       height: 105px;
       margin-bottom: 15px;
       flex: 1 1 240px;
@@ -228,7 +201,53 @@ html, body {
             opacity: 1.0;
           }
         }
+        .field {
+          margin: 10px 5px;
+        }
+        .color-selector {
+          @include clearfix;
+          &__item {
+            width: 45px;
+            height: 45px;
+            margin: 5px;
+            display: block;
+            float: left;
+            cursor: pointer;
+            border-radius: 3px;
+            border: 1px solid white;
+          }
+          .color-checked {
+            border: 1px solid red;
+          }
+        }
       }
     }
+  }
+  .blue-content {
+    @include board-color(0, 121, 191);
+  }
+  .orange-content {
+    @include board-color(210, 144, 52);
+  }
+  .green-content {
+    @include board-color(81, 152, 57);
+  }
+  .red-content {
+    @include board-color(176, 70, 50);
+  }
+  .purple-content {
+    @include board-color(137, 96, 158);
+  }
+  .pink-content {
+    @include board-color(205, 90, 145);
+  }
+  .lightgreen-content {
+    @include board-color(75, 191, 107);
+  }
+  .skyblue-content {
+    @include board-color(0, 174, 204);
+  }
+  .grey-content {
+    @include board-color(131, 140, 145);
   }
 }

@@ -37,7 +37,7 @@ ja:
         contracting:
         website: ウェブサイト
         details: 詳細
-        color: 色
+        color: ボードカラー
         created_at: 登録日
         update_at: 更新日
         user_id: 管理者
