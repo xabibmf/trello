@@ -64,6 +64,11 @@
       &__content {
         padding: 8px;
         font-size: 14px;
+        &__card {
+          background-color: #fff;
+          border-radius: 4px;
+          padding: 5px;
+        }
       }
       &__newlink {
         &__link {
