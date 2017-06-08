@@ -8,13 +8,21 @@
           リスト１
         .lists__item__content
           test
+        .lists__item__newlink
+          = link_to "カードを追加", "./new", class: "lists__item__newlink__link"
       .lists__item
         .lists__item__header
           リスト２
         .lists__item__content
           test
+        .lists__item__newlink
+          = link_to "カードを追加", "./new", class: "lists__item__newlink__link"
       .lists__item
         .lists__item__header
           リスト3
         .lists__item__content
           test
+        .lists__item__newlink
+          = link_to "カードを追加", "./new", class: "lists__item__newlink__link"
+      .lists__item.lists__item__newlist{ class: "#{@board.color}-content" }
+        = link_to "リストを追加", "./new", class: "lists__item__newlist__link"

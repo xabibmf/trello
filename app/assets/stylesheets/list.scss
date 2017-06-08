@@ -30,8 +30,9 @@
     background-color: rgb(131, 140, 145);
   }
   .board-header {
-    padding: 5px;
+    padding: 5px 5px 5px 15px;
     font-size: 20px;
+    color: white;
   }
   .board-list-content {
     white-space: nowrap;
@@ -41,18 +42,79 @@
   .lists {
     margin: 5px;
     &__item {
+      &:first-child {
+        margin-left: 10px;
+      }
+      &:last-child {
+        margin-right: 10px;
+      }
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
       display: inline-block;
+      vertical-align: top;
       width: 270px;
       background-color: #e2e4e6;
       border-radius: 4px;
       &__header {
-        padding: 4px;
+        padding: 8px;
         font-size: 15px;
         font-weight: bold;
       }
       &__content {
-        padding: 4px;
+        padding: 8px;
         font-size: 14px;
+      }
+      &__newlink {
+        &__link {
+          border-radius: 0 0 4px 4px;
+          display: block;
+          width: calc(100%-8px);
+          padding: 8px;
+          font-size: 14px;
+          text-decoration: none;
+          cursor: pointer;
+          color: #8c8c8c;
+          &:hover {
+            color: #444;
+            text-decoration: underline;
+            background-color: #c4c6c8;
+          }
+        }
+      }
+      &.lists__item__newlist {
+        padding: 4px;
+        &.blue-content {
+          @include newlist-color(0, 121, 191);
+        }
+        &.orange-content {
+          @include newlist-color(210, 144, 52);
+        }
+        &.green-content {
+          @include newlist-color(81, 152, 57);
+        }
+        &.red-content {
+          @include newlist-color(176, 70, 50);
+        }
+        &.purple-content {
+          @include newlist-color(137, 96, 158);
+        }
+        &.pink-content {
+          @include newlist-color(205, 90, 145);
+        }
+        &.lightgreen-content {
+          @include newlist-color(75, 191, 107);
+        }
+        &.skyblue-content {
+          @include newlist-color(0, 174, 204);
+        }
+        &.grey-content {
+          @include newlist-color(131, 140, 145);
+        }
+        .lists__item__newlist__link {
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
   }

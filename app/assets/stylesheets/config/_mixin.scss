@@ -13,6 +13,14 @@
   }
 }
 
+@mixin newlist-color($colorR, $colorG, $colorB) {
+  $basecolor: rgb($colorR, $colorG, $colorB);
+  background-color: darken($basecolor, 10%);
+  &:hover {
+    background-color: darken($basecolor, 20%);
+  }
+}
+
 @mixin scrolloff {
   &::-webkit-scrollbar {
     display: none;
