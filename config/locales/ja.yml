@@ -11,6 +11,7 @@ ja:
       user: ユーザー
       group: グループ
       message: メッセージ
+      board: ボード
     attributes:
       user:
         email: メールアドレス
@@ -31,6 +32,15 @@ ja:
         image: 画像
         cvreated_at: 登録日
         update_at: 更新日
+      board:
+        name: ボード名
+        contracting:
+        website: ウェブサイト
+        details: 詳細
+        color: ボードカラー
+        created_at: 登録日
+        update_at: 更新日
+        user_id: 管理者
   date:
     abbr_day_names:
     - 日
