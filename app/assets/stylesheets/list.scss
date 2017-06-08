@@ -36,8 +36,9 @@
   }
   .board-list-content {
     white-space: nowrap;
-    overflow-x: scroll;
-    height: 90%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: calc(100vh - 80px);
   }
   .lists {
     margin: 5px;
@@ -64,10 +65,15 @@
       &__content {
         padding: 8px;
         font-size: 14px;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
         &__card {
           background-color: #fff;
           border-radius: 4px;
           padding: 5px;
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
         }
       }
       &__newlink {
