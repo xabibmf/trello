@@ -2,19 +2,20 @@
   = card.name
 .modal.hidden
   .modal__header
-    = fa_icon "edit"
-    test
-    = fa_icon "times", class: "modal-close"
+    = fa_icon "edit lg"
+    .card-name
+      = card.name
+    = fa_icon "times lg", class: "modal-close"
   .modal__edit-link
     = fa_icon "align-left"
     詳細説明を編集
   .modal__comment-label
-    = fa_icon "comment-o"
+    = fa_icon "comment-o lg"
     コメントを追加
   .modal__comment-form
     .comment-save-button
   .modal__log-label
-    = fa_icon "list-ul"
+    = fa_icon "list-ul lg"
     アクティビティログ
   .modal__log-list
     .log-list__item
