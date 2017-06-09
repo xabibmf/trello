@@ -1,2 +1,2 @@
 %li.board-list__board{ class: "#{board.color}-content"}
-  = link_to board.name, "/", class: "board_link"
+  = link_to board.name, new_board_list_path(board.id), class: "board_link"
