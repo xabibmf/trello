@@ -4,6 +4,7 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @card = Card.new
   end
 
   def create
