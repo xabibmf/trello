@@ -3,52 +3,7 @@
   .board-header ボード名
   .board-list-content
     .lists
-      .lists__item
-        .lists__item__header
-          リスト１
-        .lists__item__content
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-          .lists__item__content__card
-            test
-        .lists__item__newlink
-          = link_to "カードを追加", "./new", class: "lists__item__newlink__link"
-      .lists__item
-        .lists__item__header
-          リスト２
-        .lists__item__content
-          .lists__item__content__card
-            test
-        .lists__item__newlink
-          = link_to "カードを追加", "./new", class: "lists__item__newlink__link"
-      .lists__item
-        .lists__item__header
-          リスト3
-        .lists__item__content
-          .lists__item__content__card
-            test
-        .lists__item__newlink
-          = link_to "カードを追加", "./new", class: "lists__item__newlink__link"
+      = render partial: "list", collection: @lists
       .lists__item.lists__item__newlist{ class: "#{@board.color}-content" }
         .lists__item__newlist__link リストを追加
         = render "shared/popover-list", list: @list
