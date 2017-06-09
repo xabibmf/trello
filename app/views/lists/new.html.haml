@@ -50,4 +50,5 @@
         .lists__item__newlink
           = link_to "カードを追加", "./new", class: "lists__item__newlink__link"
       .lists__item.lists__item__newlist{ class: "#{@board.color}-content" }
-        = link_to "リストを追加", "./new", class: "lists__item__newlist__link"
+        .lists__item__newlist__link リストを追加
+        = render "shared/popover-list", list: @list
