@@ -2,12 +2,13 @@
   .lists__item__header
     = list.name
   .lists__item__content
-    .lists__item__content__card
-      test
-    .lists__item__content__card
-      test
-    .lists__item__content__card
-      test
+    = render partial: "card", collection: list.cards
+    .create__card
+      = form_for @card, url: board_list_cards_path(@board, list) do |f|
+        = f.text_area :name
+        %br/
+        = f.submit '追加', class: "card-submit-button"
+        = fa_icon "times lg", class: "card-close"
   .lists__item__newlink
     .lists__item__newlink__link
       カードを追加

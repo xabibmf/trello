@@ -11,4 +11,16 @@ $(document).on('turbolinks:load', function() {
   $('.popover-list-close').on('click', function() {
     clearPopoverList();
   });
+
+  $('.lists__item__newlink').each(function() {
+    $(this).on('click', function() {
+      $(this).prev().children('.create__card').addClass('is-shown');
+    });
+  });
+
+  $('.card-close').each(function() {
+    $(this).on('click', function() {
+      $(this).parent().parent().removeClass('is-shown');
+    });
+  });
 });
