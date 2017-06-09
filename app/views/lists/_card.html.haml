@@ -1,2 +1,21 @@
 .lists__item__content__card
   = card.name
+.modal.hidden
+  .modal__header
+    = fa_icon "edit"
+    test
+    = fa_icon "times", class: "modal-close"
+  .modal__edit-link
+    = fa_icon "align-left"
+    詳細説明を編集
+  .modal__comment-label
+    = fa_icon "comment-o"
+    コメントを追加
+  .modal__comment-form
+    .comment-save-button
+  .modal__log-label
+    = fa_icon "list-ul"
+    アクティビティログ
+  .modal__log-list
+    .log-list__item
+      コメント
