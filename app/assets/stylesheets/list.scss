@@ -95,6 +95,7 @@
       }
       &.lists__item__newlist {
         padding: 4px;
+        position: relative;
         &.blue-content {
           @include newlist-color(0, 121, 191);
         }
@@ -125,8 +126,47 @@
         .lists__item__newlist__link {
           color: #fff;
           text-decoration: none;
+          cursor: pointer;
         }
       }
+    }
+  }
+  .pop-over__list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #c4c6c8;
+    padding: 4px;
+    border-radius: 4px;
+    width: 270px;
+    display: none;
+    &.is-shown {
+      display: block;
+    }
+    #list_name {
+      background-color: #e2e4e6;
+      border-radius: 4px;
+      height: 35px;
+      width: 263px;
+    }
+    .list-submit-button {
+      background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
+      opacity: 0.9;
+      box-shadow: 0 2px 0 #3f6f21;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      margin-top: 10px;
+      width: 68px;
+      height: 30px;
+      border-radius: 3px;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+    .popover-list-close {
+      cursor: pointer;
     }
   }
 }

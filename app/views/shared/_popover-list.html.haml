@@ -1,0 +1,6 @@
+.pop-over__list
+  = form_for list, url: board_lists_path do |f|
+    .field
+      = f.text_field :name, placeholder: "リストを追加"
+    = f.submit '保存', class: "list-submit-button"
+    = fa_icon "times lg", class: "popover-list-close"
