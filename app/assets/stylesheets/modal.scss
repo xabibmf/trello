@@ -15,12 +15,13 @@
   left: 0;
   max-width: 542px;
   width: calc(100vw - 70px);
-  min-height: 600px;
+  height: 600px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 4px;
   background: #f0f2f4;
   z-index: 2;
+  overflow-y: auto;
   &__header {
     margin-bottom: 20px;
     @include clearfix;
@@ -53,9 +54,42 @@
     height: 30px;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     .fa-comment-o {
       margin-right: 8px;
+    }
+  }
+
+  &__comment-form {
+    margin-bottom: 20px;
+    #activity_memo {
+      height: 75px;
+      max-width: 522px;
+      width: calc(100vw - 90px);
+      border: none;
+      margin: 0 auto;
+      border-radius: 4px;
+      resize: none;
+      box-shadow: 1px 1px #e2e4e6;
+    }
+    .activity-submit-button {
+      border: none;
+      width: 68px;
+      height: 30px;
+      border-radius: 3px;
+      color: #8c8c8c;
+      background-color: #e2e4e6;
+      &.active {
+        cursor: pointer;
+        font-weight: bold;
+        background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
+        opacity: 0.9;
+        box-shadow: 0 2px 0 #3f6f21;
+        color: #fff;
+        &:hover {
+          opacity: 1.0;
+        }
+      }
     }
   }
 
