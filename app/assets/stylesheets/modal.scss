@@ -33,8 +33,24 @@
     .card-name {
       float: left;
       font-size: 22px;
-      line-height: 18px;
       font-weight: bold;
+      cursor: pointer;
+      &.hidden {
+        display: none;
+      }
+      &__form {
+        display: none;
+        &.is-shown {
+          display: block;
+        }
+        .card-edit-form {
+          float: left;
+          font-size: 22px;
+          font-weight: bold;
+          border: none;
+          border-radius: 4px;
+        }
+      }
     }
     .modal-close {
       float: right;
