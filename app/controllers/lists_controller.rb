@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
-  before_action :set_board, only: [:new, :create]
+  before_action :set_board, only: [:new, :create, :update]
   before_action :set_lists, only: :new
+  before_action :set_list, only: :update
 
   def new
     @list = List.new
@@ -17,6 +18,13 @@ class ListsController < ApplicationController
     end
   end
 
+  def update
+    binding.pry
+    if @list.update(list_params)
+    else
+    end
+  end
+
   private
 
   def list_params
@@ -29,5 +37,9 @@ class ListsController < ApplicationController
 
   def set_lists
     @lists = @board.lists
+  end
+
+  def set_list
+    @list = List.find(params[:id])
   end
 end
