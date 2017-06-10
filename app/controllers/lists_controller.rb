@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   def new
     @list = List.new
     @card = Card.new
+    @activity = Activity.new
   end
 
   def create

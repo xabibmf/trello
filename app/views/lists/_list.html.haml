@@ -2,7 +2,7 @@
   .lists__item__header
     = list.name
   .lists__item__content
-    = render partial: "card", collection: list.cards
+    = render partial: "card", collection: list.cards, locals: { list: list}
     .create__card
       = form_for @card, url: board_list_cards_path(@board, list) do |f|
         = f.text_area :name
