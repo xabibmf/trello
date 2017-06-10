@@ -12,8 +12,11 @@
   .modal__comment-label
     = fa_icon "comment-o lg"
     コメントを追加
+  .model__comment-form
     = form_for @activity, url: board_list_card_activities_path(@board, list, card) do |f|
       = f.text_area :memo
+      %br/
+      = f.submit '保存', class: "activity-submit-button"
   .modal__comment-form
     .comment-save-button
   .modal__log-label
