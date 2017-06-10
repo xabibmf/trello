@@ -36,4 +36,8 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().parent().removeClass('is-shown');
     });
   });
+
+  $('.board-header__name').on('click', function() {
+    $(this).next().addClass("is-shown");
+  });
 });
