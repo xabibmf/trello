@@ -1,0 +1,33 @@
+.pop-over__board.pop-over__board-edit
+  .pop-over__board__header
+    %span ボードを修正
+    = fa_icon "times"
+  .pop-over__board__content
+    = form_for board do |f|
+      .field
+        = f.label :name
+        %br/
+        = f.text_field :name
+      .field
+        = f.label :color
+        = f.hidden_field :color
+        %ul.color-selector
+          %li
+            .color-selector__item.blue-content
+          %li
+            .color-selector__item.orange-content
+          %li
+            .color-selector__item.green-content
+          %li
+            .color-selector__item.red-content
+          %li
+            .color-selector__item.purple-content
+          %li
+            .color-selector__item.pink-content
+          %li
+            .color-selector__item.lightgreen-content
+          %li
+            .color-selector__item.skyblue-content
+          %li
+            .color-selector__item.grey-content
+      = f.submit '修正', class: "board-submit-button"

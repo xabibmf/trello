@@ -1,6 +1,9 @@
 = render "shared/header"
 .board-main-content{ class: "#{@board.color}-content" }
-  .board-header ボード名
+  .board-header
+    %span.board-header__name
+      = @board.name
+    = render "shared/popover-board-edit", board: @board
   .board-list-content
     .lists
       = render partial: "list", collection: @lists

@@ -1,0 +1,99 @@
+.pop-over__board {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #D6DADC;
+  border-bottom-color: #C4C9CC;
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);
+  width: 300px;
+  padding: 5px;
+  color: #4d4d4d;
+  z-index: 100;
+  display: none;
+  &__header {
+    position: relative;
+    text-align: center;
+    i {
+      position: absolute;
+      right: 3px;
+      top: 3px;
+    }
+  }
+  &.is-shown {
+    display: block;
+  }
+  &__content {
+    margin: 7px 0 0;
+    padding: 7px 0 0;
+    border-top: 1px solid #D6DADC;
+    .board-submit-button {
+      background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
+      opacity: 0.9;
+      box-shadow: 0 2px 0 #3f6f21;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      margin-top: 10px;
+      width: 90px;
+      height: 35px;
+      border-radius: 3px;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+    .field {
+      margin: 10px 5px;
+    }
+    .color-selector {
+      @include clearfix;
+      &__item {
+        width: 45px;
+        height: 45px;
+        margin: 5px;
+        display: block;
+        float: left;
+        cursor: pointer;
+        border-radius: 3px;
+        border: 1px solid white;
+        &.blue-content {
+          @include board-color(0, 121, 191);
+        }
+        &.orange-content {
+          @include board-color(210, 144, 52);
+        }
+        &.green-content {
+          @include board-color(81, 152, 57);
+        }
+        &.red-content {
+          @include board-color(176, 70, 50);
+        }
+        &.purple-content {
+          @include board-color(137, 96, 158);
+        }
+        &.pink-content {
+          @include board-color(205, 90, 145);
+        }
+        &.lightgreen-content {
+          @include board-color(75, 191, 107);
+        }
+        &.skyblue-content {
+          @include board-color(0, 174, 204);
+        }
+        &.grey-content {
+          @include board-color(131, 140, 145);
+        }
+      }
+      .color-checked {
+        border: 1px solid red;
+      }
+    }
+  }
+}
+.pop-over__board-edit {
+  font-size: 16px;
+  left: 5px;
+  top: 80px;
+}
