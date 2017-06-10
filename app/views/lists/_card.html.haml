@@ -5,6 +5,9 @@
     = fa_icon "edit lg"
     .card-name
       = card.name
+    .card-name__form
+      = form_for card, url: board_list_card_path(@board, list, card) do |f|
+        = f.text_field :name, autofocus: true, class: "card-edit-form"
     = fa_icon "times lg", class: "modal-close"
   .modal__edit-link
     = fa_icon "align-left"

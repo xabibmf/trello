@@ -6,6 +6,10 @@ class CardsController < ApplicationController
     end
   end
 
+  def update
+    #code
+  end
+
   private
 
   def card_params
