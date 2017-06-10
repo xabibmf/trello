@@ -19,7 +19,6 @@ class ListsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @list.update(list_params)
     else
     end
