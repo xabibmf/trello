@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170609061211) do
+ActiveRecord::Schema.define(version: 20170610030617) do
+
+  create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "memo",       limit: 65535, null: false
+    t.integer  "card_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["card_id"], name: "index_activities_on_card_id", using: :btree
+  end
 
   create_table "boards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                       null: false
@@ -61,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170609061211) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "activities", "cards"
   add_foreign_key "boards", "users"
   add_foreign_key "cards", "lists"
   add_foreign_key "lists", "boards"
