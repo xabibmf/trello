@@ -27,6 +27,15 @@ $(document).on('turbolinks:load', function() {
         return false;
       }
     });
+    $(this).next().find('.card-name').on('click', function() {
+      $(this).addClass('hidden');
+      $(this).next().addClass('is-shown');
+      $(this).next().find('.card-edit-form').select();
+    });
+    $(this).next().find('.card-edit-form').blur(function() {
+      $(this).parent().parent().prev().removeClass('hidden');
+      $(this).parent().parent().removeClass('is-shown');
+    });
   });
 
   times.on('click', function() {
