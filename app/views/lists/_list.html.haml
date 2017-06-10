@@ -3,7 +3,7 @@
     = list.name
   .lists__item__header__form
     = form_for list, url: edit_board_list_path(@board, list) do |f|
-      = f.text_field :name
+      = f.text_field :name, autofocus: true, class: "list-edit-form"
   .lists__item__content
     = render partial: "card", collection: list.cards, locals: { list: list}
     .create__card

@@ -23,4 +23,17 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().parent().removeClass('is-shown');
     });
   });
+
+  $('.lists__item').each(function() {
+    $(this).children('.lists__item__header').on('click', function() {
+      $(this).addClass('hidden');
+      $(this).next().addClass('is-shown');
+      $(this).next().find('.list-edit-form').select();
+    });
+
+    $(this).find('.list-edit-form').blur(function() {
+      $(this).parent().parent().prev().removeClass('hidden');
+      $(this).parent().parent().removeClass('is-shown');
+    });
+  });
 });
