@@ -180,6 +180,9 @@
     &__footer {
       color: rgba(0, 0, 0, .4);
       font-size: 12px;
+      a:link {
+        color: rgba(0, 0, 0, .4);
+      }
       &__edit, &__delete {
         text-decoration: underline;
         cursor: pointer;

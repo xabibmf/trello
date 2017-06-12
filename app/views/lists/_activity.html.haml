@@ -15,5 +15,4 @@
     %span.log-list__item__footer__edit
       編集
     %span -
-    %span.log-list__item__footer__delete
-      削除
+    = link_to "削除", { controller: "activities", action: "destroy", list_id: list.id, card_id: card.id, id: activity.id }, { class: '.log-list__item__footer__delete' }
