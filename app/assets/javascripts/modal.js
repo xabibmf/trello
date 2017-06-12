@@ -36,6 +36,16 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().parent().prev().removeClass('hidden');
       $(this).parent().parent().removeClass('is-shown');
     });
+
+    $(this).next().find('.modal__edit-link').on('click', function() {
+      $(this).addClass('hidden');
+      $(this).next().addClass('is-shown');
+    });
+
+    $(this).next().find('.card-details-close').on('click', function() {
+      $(this).parent().parent().prev().removeClass('hidden');
+      $(this).parent().parent().removeClass('is-shown');
+    });
   });
 
   times.on('click', function() {

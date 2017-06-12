@@ -11,13 +11,14 @@
     = fa_icon "times lg", class: "modal-close"
   .modal__edit-link
     = fa_icon "align-left"
-    詳細説明を編集
+    %span.modal__edit-link__text
+      詳細説明を編集
   .modal__edit-link__form
     = form_for card, url: board_list_card_path(@board, list, card) do |f|
       = f.text_area :details, autofocus: true, class: "card-details-edit-form", placeholder: '詳しい説明を追加する...'
       %br/
       = f.submit '保存', class: "card-details-edit-submit"
-      = fa_icon "times lg"
+      = fa_icon "times lg", class: "card-details-close"
   .modal__comment-label
     = fa_icon "comment-o lg"
     コメントを追加
