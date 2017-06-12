@@ -177,6 +177,14 @@
     &:not(:last-child) {
       border-bottom: solid 1px #e2e4e6;
     }
+    &__footer {
+      color: rgba(0, 0, 0, .4);
+      font-size: 12px;
+      &__edit, &__delete {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
     &__comment {
       padding-bottom: 8px;
       margin-bottom: 8px;

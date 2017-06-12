@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :boards, only: [:create, :update] do
     resources :lists, only: [:new, :create, :update] do
       resources :cards, only: [:create, :update] do
-        resources :activities, only: :create
+        resources :activities, only: [:create, :update]
       end
     end
   end
