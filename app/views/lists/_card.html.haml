@@ -23,7 +23,7 @@
         詳細説明を編集
   .modal__edit-link__form
     = form_for card, url: board_list_card_path(@board, list, card) do |f|
-      = f.text_area :details, autofocus: true, class: "card-details-edit-form", placeholder: '詳しい説明を追加する...'
+      = f.text_area :details, autofocus: true, class: "card-details-edit-form"
       %br/
       = f.submit '保存', class: "card-details-edit-submit"
       = fa_icon "times lg", class: "card-details-close"

@@ -193,6 +193,47 @@
         padding: 10px;
         border-radius: 4px;
         box-shadow: 2px 2px #e2e4e6;
+        &.hidden {
+          display: none;
+        }
+      }
+      &__form {
+        display: none;
+        &.is-shown {
+          display: block;
+        }
+        .activity-memo-edit-form {
+          border: none;
+          box-shadow: 1px 1px #e2e4e6;
+          border-radius: 4px;
+          resize: none;
+          height: 60px;
+          max-width: 522px;
+          width: calc(100vw - 90px);
+          padding: 5px;
+          outline: 0;
+        }
+        .activity-memo-edit-submit {
+          border: none;
+          width: 68px;
+          height: 30px;
+          border-radius: 3px;
+          color: #8c8c8c;
+          outline: 0;
+          margin-right: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
+          opacity: 0.9;
+          box-shadow: 0 2px 0 #3f6f21;
+          color: #fff;
+          &:hover {
+            opacity: 1.0;
+          }
+        }
+        .activity-memo-close {
+          cursor: pointer;
+        }
       }
     }
   }
