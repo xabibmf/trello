@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: :update
+  before_action :set_activity, only: [:update, :destroy]
 
   def create
     @activity = Activity.new(activity_params)
@@ -10,6 +10,12 @@ class ActivitiesController < ApplicationController
 
   def update
     if @activity.update(activity_params)
+    else
+    end
+  end
+
+  def destroy
+    if @activity.delete
     else
     end
   end
