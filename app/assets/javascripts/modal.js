@@ -46,6 +46,18 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().parent().prev().removeClass('hidden');
       $(this).parent().parent().removeClass('is-shown');
     });
+
+    $(this).next().find('.log-list__item').each(function() {
+      $(this).find('.log-list__item__footer__edit').on('click', function() {
+        $(this).parent().prev().prev().addClass('hidden');
+        $(this).parent().prev().addClass('is-shown');
+      });
+
+      $(this).find('.activity-memo-close').on('click', function() {
+        $(this).parent().parent().prev().removeClass('hidden');
+        $(this).parent().parent().removeClass('is-shown');
+      });
+    });
   });
 
   times.on('click', function() {
