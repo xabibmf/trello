@@ -9,7 +9,10 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(board_params)
     if @board.save
-
+      respond_to do |format|
+        format.html
+        format.json { render json: @board }
+      end
     else
 
     end
