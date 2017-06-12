@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'boards#new'
-  resources :boards, only: :create do
-    resources :lists, only: [:new, :create] do
-      resources :cards, only: :create do
-        resources :activities, only: :create
+  resources :boards, only: [:create, :update] do
+    resources :lists, only: [:new, :create, :update] do
+      resources :cards, only: [:create, :update] do
+        resources :activities, only: [:create, :update, :destroy]
       end
     end
   end

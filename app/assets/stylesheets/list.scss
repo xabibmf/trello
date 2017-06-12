@@ -33,6 +33,7 @@
     padding: 5px 5px 5px 15px;
     font-size: 20px;
     color: white;
+    font-weight: bold;
   }
   .board-list-content {
     white-space: nowrap;
@@ -61,6 +62,23 @@
         padding: 8px;
         font-size: 15px;
         font-weight: bold;
+        &.hidden {
+          display: none;
+        }
+        &__form {
+          display: none;
+          margin: 8px;
+          font-size: 15px;
+          font-weight: bold;
+          #list_name {
+            width: 250px;
+            border: none;
+            border-radius: 4px;
+          }
+          &.is-shown {
+            display: block;
+          }
+        }
       }
       &__content {
         padding: 8px;

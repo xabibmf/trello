@@ -27,6 +27,37 @@ $(document).on('turbolinks:load', function() {
         return false;
       }
     });
+    $(this).next().find('.card-name').on('click', function() {
+      $(this).addClass('hidden');
+      $(this).next().addClass('is-shown');
+      $(this).next().find('.card-edit-form').select();
+    });
+    $(this).next().find('.card-edit-form').blur(function() {
+      $(this).parent().parent().prev().removeClass('hidden');
+      $(this).parent().parent().removeClass('is-shown');
+    });
+
+    $(this).next().find('.modal__edit-link').on('click', function() {
+      $(this).addClass('hidden');
+      $(this).next().addClass('is-shown');
+    });
+
+    $(this).next().find('.card-details-close').on('click', function() {
+      $(this).parent().parent().prev().removeClass('hidden');
+      $(this).parent().parent().removeClass('is-shown');
+    });
+
+    $(this).next().find('.log-list__item').each(function() {
+      $(this).find('.log-list__item__footer__edit').on('click', function() {
+        $(this).parent().prev().prev().addClass('hidden');
+        $(this).parent().prev().addClass('is-shown');
+      });
+
+      $(this).find('.activity-memo-close').on('click', function() {
+        $(this).parent().parent().prev().removeClass('hidden');
+        $(this).parent().parent().removeClass('is-shown');
+      });
+    });
   });
 
   times.on('click', function() {

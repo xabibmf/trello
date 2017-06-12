@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_action :set_boards, only: :new
+  before_action :set_board, only: :update
 
   def new
     @board = Board.new
@@ -14,6 +15,12 @@ class BoardsController < ApplicationController
     end
   end
 
+  def update
+    if @board.update(board_params)
+    else
+    end
+  end
+
   private
 
   def board_params
@@ -22,5 +29,9 @@ class BoardsController < ApplicationController
 
   def set_boards
     @boards = current_user.boards
+  end
+
+  def set_board
+    @board = Board.find(params[:id])
   end
 end
