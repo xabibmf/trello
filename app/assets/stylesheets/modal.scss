@@ -61,9 +61,12 @@
     margin-left: 35px;
     margin-bottom: 20px;
     color: rgba(0, 0, 0, .4);
-    text-decoration: underline;
     &__text {
       cursor: pointer;
+      text-decoration: underline;
+      &__details {
+        color: #111;
+      }
     }
     .fa-align-left {
       margin-right: 8px;

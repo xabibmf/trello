@@ -10,9 +10,17 @@
         = f.text_field :name, autofocus: true, class: "card-edit-form"
     = fa_icon "times lg", class: "modal-close"
   .modal__edit-link
-    = fa_icon "align-left"
-    %span.modal__edit-link__text
-      詳細説明を編集
+    - if card.details
+      %span.modal__edit-link__details
+        詳細説明
+      %span.modal__edit-link__text
+        編集
+      .modal__edit-link__text__details
+        = card.details
+    - else
+      = fa_icon "align-left"
+      %span.modal__edit-link__text
+        詳細説明を編集
   .modal__edit-link__form
     = form_for card, url: board_list_card_path(@board, list, card) do |f|
       = f.text_area :details, autofocus: true, class: "card-details-edit-form", placeholder: '詳しい説明を追加する...'
