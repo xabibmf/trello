@@ -35,6 +35,11 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().parent().prev().removeClass('hidden');
       $(this).parent().parent().removeClass('is-shown');
     });
+
+    $(this).find('.edit_list').on('submit', function() {
+      $(this).parent().prev().removeClass('hidden');
+      $(this).parent().removeClass('is-shown');
+    });
   });
 
   $('.board-header__name').on('click', function() {
