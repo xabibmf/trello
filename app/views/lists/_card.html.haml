@@ -39,4 +39,4 @@
     = fa_icon "list-ul lg"
     アクティビティログ
   .modal__log-list
-    = render partial: "activity", collection: card.activities.reverse, locals: { list: list, card: card }
+    = render partial: "shared/activity", collection: card.activities.reverse, locals: { list: list, card: card }

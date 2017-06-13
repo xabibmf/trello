@@ -1,8 +1,11 @@
 class CardsController < ApplicationController
   before_action :set_card, only: :update
+  before_action :set_list, only: :create
+    before_action :set_board, only: :create
   def create
-    @list = Card.new(card_params)
-    if @list.save
+    @activity = Activity.new
+    @card = Card.new(card_params)
+    if @card.save
     else
     end
   end
@@ -21,5 +24,13 @@ class CardsController < ApplicationController
 
   def set_card
     @card = Card.find(params[:id])
+  end
+
+  def set_list
+    @list = List.find(params[:list_id])
+  end
+
+  def set_board
+    @board = Board.find(params[:board_id])
   end
 end

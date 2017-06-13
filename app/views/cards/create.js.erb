@@ -1,0 +1,4 @@
+var target = $(".lists__item.list-id-<%= @card.list_id%>").find('.create__card');
+target.before("<%= j (render 'lists/card', card: @card, list: @list) %>");
+target.find('#card_name').val('');
+target.removeClass('is-shown');
