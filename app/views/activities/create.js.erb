@@ -1,0 +1,4 @@
+var target = $('.modal.card-id-<%= @activity.card_id %>').find('.modal__log-list');
+target.prepend("<%= j (render 'shared/activity', list: @list, card: @card, activity: @activity) %>");
+target.prev().prev().find('#activity_memo').val('');
+target.prev().prev().find('.activity-submit-button').removeClass('active');

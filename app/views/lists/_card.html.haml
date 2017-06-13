@@ -1,6 +1,6 @@
 .lists__item__content__card
   = card.name
-.modal.hidden
+.modal.hidden{class: "card-id-#{card.id}"}
   .modal__header
     = fa_icon "edit 2x"
     .card-name
@@ -31,7 +31,7 @@
     = fa_icon "comment-o lg"
     コメントを追加
   .modal__comment-form
-    = form_for @activity, url: board_list_card_activities_path(@board, list, card) do |f|
+    = form_for @activity, url: board_list_card_activities_path(@board, list, card), remote: true do |f|
       = f.text_area :memo
       %br/
       = f.submit '保存', class: "activity-submit-button"

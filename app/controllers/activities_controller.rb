@@ -1,5 +1,8 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:update, :destroy]
+  before_action :set_card, only: :create
+  before_action :set_list, only: :create
+  before_action :set_board, only: :create
 
   def create
     @activity = Activity.new(activity_params)
@@ -28,5 +31,17 @@ class ActivitiesController < ApplicationController
 
   def set_activity
     @activity = Activity.find(params[:id])
+  end
+
+  def set_card
+    @card = Card.find(params[:card_id])
+  end
+
+  def set_list
+    @list = List.find(params[:list_id])
+  end
+
+  def set_board
+    @board = Board.find(params[:board_id])
   end
 end
