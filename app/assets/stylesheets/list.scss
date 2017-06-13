@@ -34,6 +34,9 @@
     font-size: 20px;
     color: white;
     font-weight: bold;
+    &__name {
+      cursor: pointer;
+    }
   }
   .board-list-content {
     white-space: nowrap;
