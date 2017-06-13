@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   before_action :set_card, only: :update
   before_action :set_list, only: :create
-    before_action :set_board, only: :create
+  before_action :set_board, only: :create
   def create
     @activity = Activity.new
     @card = Card.new(card_params)
