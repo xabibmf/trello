@@ -1,4 +1,7 @@
-$('.lists').children('.lists__item__newlist').before("<%= j (render 'list', list: @list) %>");
+var target = $('.lists').children('.lists__item__newlist');
+target.before("<%= j (render 'list', list: @list) %>");
+target.find('#list_name').val('');
+target.find('.is-shown').removeClass('is-shown');
 $.each($('.lists__item__newlink'), function() {
   $(this).on('click', function() {
     $(this).prev().children('.create__card').addClass('is-shown');
