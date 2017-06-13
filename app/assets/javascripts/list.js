@@ -12,9 +12,10 @@ $(document).on('turbolinks:load', function() {
     clearPopoverList();
   });
 
-  $('.lists__item__newlink').each(function() {
+  $.each($('.lists__item__newlink'), function() {
     $(this).on('click', function() {
       $(this).prev().children('.create__card').addClass('is-shown');
+      console.log($('.lists__item__newlink').length);
     });
   });
 
