@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   before_action :set_boards, only: :new
   before_action :set_board, only: :update
+  before_action :set_lists, only: :update
 
   def new
     @board = Board.new
@@ -19,7 +20,9 @@ class BoardsController < ApplicationController
   end
 
   def update
+    @card = Card.new
     if @board.update(board_params)
+      render template: "lists/new"
     else
     end
   end
@@ -36,5 +39,10 @@ class BoardsController < ApplicationController
 
   def set_board
     @board = Board.find(params[:id])
+  end
+
+  def set_lists
+    @lists = @board.lists
+    @list = List.new
   end
 end

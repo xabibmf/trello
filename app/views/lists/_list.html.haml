@@ -5,7 +5,7 @@
     = form_for list, url: board_list_path(@board, list) do |f|
       = f.text_field :name, autofocus: true, class: "list-edit-form"
   .lists__item__content
-    = render partial: "card", collection: list.cards, locals: { list: list}
+    = render partial: "lists/card", collection: list.cards, locals: { list: list}
     .create__card
       = form_for @card, url: board_list_cards_path(@board, list), remote: true do |f|
         = f.text_area :name

@@ -6,7 +6,7 @@
     = render "shared/popover-board-edit", board: @board
   .board-list-content
     .lists
-      = render partial: "list", collection: @lists
+      = render partial: "lists/list", collection: @lists
       .lists__item.lists__item__newlist{ class: "#{@board.color}-content" }
         .lists__item__newlist__link リストを追加
         = render "shared/popover-list", list: @list

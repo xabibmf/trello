@@ -1,5 +1,5 @@
 .pop-over__list
-  = form_for list, url: board_lists_path, remote: true do |f|
+  = form_for list, url: board_lists_path(@board), remote: true do |f|
     .field
       = f.text_field :name, placeholder: "リストを追加"
     = f.submit '保存', class: "list-submit-button"
