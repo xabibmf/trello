@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :lists, only: [:new, :create, :update] do
       put :sort
       resources :cards, only: [:create, :update] do
+        put :sort
         resources :activities, only: [:create, :update, :destroy]
       end
     end

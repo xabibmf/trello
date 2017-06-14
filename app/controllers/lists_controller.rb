@@ -28,7 +28,6 @@ class ListsController < ApplicationController
   def sort
     target_list = List.find(sort_params[:list_id])
     target_list.insert_at(sort_params[:position].to_i + 1)
-    binding.pry
     render body: nil
   end
 

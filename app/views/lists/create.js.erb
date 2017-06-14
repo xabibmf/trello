@@ -12,3 +12,17 @@ $('.card-close').each(function() {
     $(this).parent().parent().removeClass('is-shown');
   });
 });
+$('.lists').sortable({
+  items: $('.lists__item:not(:last-child)'),
+  tolerance: "pointer",
+  update: function(e, ui) {
+    item = ui.item;
+    item_data = item.data();
+    $.ajax({
+      type: 'PUT',
+      url: item_data.updateUrl,
+      dataType: 'json',
+      data: { position: item.index() }
+    });
+  }
+});
