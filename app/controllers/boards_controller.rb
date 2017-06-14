@@ -21,6 +21,7 @@ class BoardsController < ApplicationController
 
   def update
     @card = Card.new
+    @activity = Activity.new
     if @board.update(board_params)
       render template: "lists/new"
     else
