@@ -26,7 +26,9 @@ class CardsController < ApplicationController
       target_card.move_to_bottom
       new_list_count = List.find(new_list_id).cards.count.to_i + 1
       target_card.update(list_id: new_list_id, position: new_list_count)
-      target_card.insert_at(sort_params[:position].to_i + 1)
+      if new_list_count != 1
+        target_card.insert_at(sort_params[:position].to_i + 1)
+      end
     end
     render body: nil
   end
