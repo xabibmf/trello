@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610030617) do
+ActiveRecord::Schema.define(version: 20170614053417) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "memo",       limit: 65535, null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170610030617) do
     t.integer  "board_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "position"
     t.index ["board_id"], name: "index_lists_on_board_id", using: :btree
   end
 
