@@ -1,4 +1,4 @@
-.lists__item{class: "list-id-#{list.id}"}
+.lists__item{class: "list-id-#{list.id}", id: "list_#{list.id}", data: {update_url: board_list_sort_path(@board, list) } }
   .lists__item__header
     = list.name
   .lists__item__header__form
