@@ -1,13 +1,13 @@
-.lists__item
+.lists__item{class: "list-id-#{list.id}"}
   .lists__item__header
     = list.name
   .lists__item__header__form
-    = form_for list, url: board_list_path(@board, list) do |f|
+    = form_for list, url: board_list_path(@board, list), remote: true do |f|
       = f.text_field :name, autofocus: true, class: "list-edit-form"
   .lists__item__content
-    = render partial: "card", collection: list.cards, locals: { list: list}
+    = render partial: "lists/card", collection: list.cards, locals: { list: list}
     .create__card
-      = form_for @card, url: board_list_cards_path(@board, list) do |f|
+      = form_for @card, url: board_list_cards_path(@board, list), remote: true do |f|
         = f.text_area :name
         %br/
         = f.submit '追加', class: "card-submit-button"

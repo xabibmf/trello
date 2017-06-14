@@ -1,0 +1,18 @@
+var target = $('.card-id-<%= @card.id %>');
+target.find('.card-name').html('<%= @card.name %>');
+target.find('.card-name').removeClass('hidden');
+target.find('.card-name__form').removeClass('is-shown');
+var details = "<%= @card.details %>";
+
+function hiddenForm() {
+  target.find('.modal__edit-link').removeClass('hidden');
+  target.find('.modal__edit-link__form').removeClass('is-shown');
+}
+
+if (details == "" || details == null) {
+  hiddenForm();
+  target.find('.modal__edit-link').html('<i class="fa fa-align-left"></i><span class="modal__edit-link__text">詳細説明を編集</span>');
+} else {
+  hiddenForm();
+  target.find('.modal__edit-link').html('<span class="modal__edit-link__details">詳細説明</span>\n<span class="modal__edit-link__text">編集</span><div class="modal__edit-link__text__details"><%= @card.details %></div>');
+}

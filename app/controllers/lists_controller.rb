@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   end
 
   def create
+    @card = Card.new
     @list = List.new(list_params)
     if @list.save
 

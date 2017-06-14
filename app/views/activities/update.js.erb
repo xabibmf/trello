@@ -1,0 +1,4 @@
+var target = $('.activity-id-<%= @activity.id %>');
+target.children('.log-list__item__comment').removeClass('hidden');
+target.children('.log-list__item__comment__form').removeClass('is-shown');
+target.children('.log-list__item__comment').html('<span class="log-list__item__comment__text"><%= @activity.memo %></span>');

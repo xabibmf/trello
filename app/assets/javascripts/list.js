@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function() {
     clearPopoverList();
   });
 
-  $('.lists__item__newlink').each(function() {
+  $.each($('.lists__item__newlink'), function() {
     $(this).on('click', function() {
       $(this).prev().children('.create__card').addClass('is-shown');
     });
@@ -34,6 +34,11 @@ $(document).on('turbolinks:load', function() {
     $(this).find('.list-edit-form').blur(function() {
       $(this).parent().parent().prev().removeClass('hidden');
       $(this).parent().parent().removeClass('is-shown');
+    });
+
+    $(this).find('.edit_list').on('submit', function() {
+      $(this).parent().prev().removeClass('hidden');
+      $(this).parent().removeClass('is-shown');
     });
   });
 
