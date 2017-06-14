@@ -14,5 +14,5 @@ if (details == "" || details == null) {
   target.find('.modal__edit-link').html('<i class="fa fa-align-left"></i><span class="modal__edit-link__text">詳細説明を編集</span>');
 } else {
   hiddenForm();
-target.find('.modal__edit-link').html('<span class="modal__edit-link__details">詳細説明</span>\n<span class="modal__edit-link__text">編集</span><div class="modal__edit-link__text__details"><%= @card.details %></div>')
+  target.find('.modal__edit-link').html('<span class="modal__edit-link__details">詳細説明</span>\n<span class="modal__edit-link__text">編集</span><div class="modal__edit-link__text__details"><%= @card.details %></div>');
 }
