@@ -1,9 +1,9 @@
-.log-list__item
+.log-list__item{class: "activity-id-#{activity.id}"}
   .log-list__item__comment
     %span.log-list__item__comment__text
       = activity.memo
   .log-list__item__comment__form
-    = form_for activity, url: board_list_card_activity_path(@board, list, card, activity) do |f|
+    = form_for activity, url: board_list_card_activity_path(@board, list, card, activity), remote: true do |f|
       = f.text_area :memo, autofocus: true, class: "activity-memo-edit-form", placeholder: 'コメントを入力してください'
       %br/
       = f.submit '保存', class: "activity-memo-edit-submit"
