@@ -2,6 +2,7 @@ $(document).on('turbolinks:load', function() {
   $('.lists__item__content').sortable({
     items: $('.card'),
     tolerance: "pointer",
+    placeholder: "emptycard",
     update: function(e, ui) {
       item = ui.item;
       item_data = item.data();
