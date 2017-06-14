@@ -3,6 +3,7 @@ $(document).on('turbolinks:load', function() {
     items: $('.card'),
     tolerance: "pointer",
     placeholder: "emptycard",
+    connectWith: $('.lists__item__content'),
     update: function(e, ui) {
       item = ui.item;
       item_data = item.data();
