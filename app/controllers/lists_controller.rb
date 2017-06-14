@@ -25,10 +25,21 @@ class ListsController < ApplicationController
     end
   end
 
+  def sort
+    target_list = List.find(sort_params[:list_id])
+    target_list.insert_at(sort_params[:position].to_i + 1)
+    binding.pry
+    render body: nil
+  end
+
   private
 
   def list_params
     params.require(:list).permit(:name).merge(board: @board)
+  end
+
+  def sort_params
+    params.permit(:board_id, :list_id, :position)
   end
 
   def set_board
