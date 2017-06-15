@@ -25,15 +25,14 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    list = List.find(delete_params[:id])
-    list.cards.each do |card|
+    @target_list = List.find(delete_params[:id])
+    @target_list.cards.each do |card|
       card.activities.destroy_all
     end
-    list.cards.destroy_all
-    list.move_to_bottom
-    list.delete
+    @target_list.cards.destroy_all
+    @target_list.move_to_bottom
+    @target_list.delete
     set_new_model
-    render :new
   end
 
   def sort
