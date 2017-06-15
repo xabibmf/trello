@@ -6,6 +6,22 @@ $.each($('.lists__item__newlink'), function() {
   $(this).on('click', function() {
     $(this).prev().children('.create__card').addClass('is-shown');
   });
+
+  $(this).parent().find('.lists__item__header').on('click', function() {
+    $(this).addClass('hidden');
+    $(this).next().addClass('is-shown');
+    $(this).next().find('.list-edit-form').select();
+  });
+
+  $(this).parent().find('.list-edit-form').blur(function() {
+    $(this).parent().parent().prev().removeClass('hidden');
+    $(this).parent().parent().removeClass('is-shown');
+  });
+
+  $(this).parent().find('.edit_list').on('submit', function() {
+    $(this).parent().prev().removeClass('hidden');
+    $(this).parent().removeClass('is-shown');
+  });
 });
 $('.card-close').each(function() {
   $(this).on('click', function() {
