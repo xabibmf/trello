@@ -66,6 +66,9 @@
       text-decoration: underline;
       &__details {
         color: #111;
+        max-width: 492px;
+        width: calc(100vw - 120px);
+        white-space: normal;
       }
     }
     .fa-align-left {
