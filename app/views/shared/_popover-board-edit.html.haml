@@ -31,3 +31,5 @@
           %li
             .color-selector__item.grey-content
       = f.submit '修正', class: "board-submit-button"
+    .board-delete-button
+      = link_to "削除", { controller: "boards", action: "destroy", id: board.id }, method: :delete, class: "board-delete-button__link"

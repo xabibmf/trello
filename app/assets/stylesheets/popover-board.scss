@@ -28,6 +28,7 @@
     margin: 7px 0 0;
     padding: 7px 0 0;
     border-top: 1px solid #D6DADC;
+    position: relative;
     .board-submit-button {
       background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
       opacity: 0.9;
@@ -96,4 +97,31 @@
   font-size: 16px;
   left: 5px;
   top: 80px;
+}
+
+.board-delete-button {
+  background-color: #eb5a46;
+  opacity: 0.9;
+  box-shadow: 0 2px 0 #b04632;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  width: 68px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  &:hover {
+    opacity: 1.0;
+  }
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }

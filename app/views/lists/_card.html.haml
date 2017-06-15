@@ -41,3 +41,5 @@
       アクティビティログ
     .modal__log-list
       = render partial: "shared/activity", collection: card.activities.reverse, locals: { list: list, card: card }
+    .card-delete-button
+      = link_to "削除", { controller: "cards", action: "destroy", board_id: @board.id, list_id: list.id, id: card.id }, method: :delete, class: "card-delete-button__link", remote: true

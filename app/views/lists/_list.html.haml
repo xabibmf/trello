@@ -4,6 +4,8 @@
   .lists__item__header__form
     = form_for list, url: board_list_path(@board, list), remote: true do |f|
       = f.text_field :name, autofocus: true, class: "list-edit-form"
+    .list-delete-button
+      = link_to "削除", { controller: "lists", action: "destroy", board_id: @board.id, id: list.id }, method: :delete, class: "list-delete-button__link", remote: true
   .lists__item__content
     = render partial: "lists/card", collection: list.cards, locals: { list: list}
     .create__card
