@@ -2,6 +2,8 @@ var target = $('.card-id-<%= @card.id %>');
 target.find('.card-name').html('<%= @card.name %>');
 target.find('.card-name').removeClass('hidden');
 target.find('.card-name__form').removeClass('is-shown');
+target.prev().html('<%= @card.name %>');
+
 var details = "<%= @card.details %>";
 
 function hiddenForm() {
