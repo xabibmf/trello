@@ -17,6 +17,13 @@ class CardsController < ApplicationController
     end
   end
 
+  def destroy
+    card = Card.find(destroy_params[:id])
+    card.activities.destroy_all
+    card.move_to_bottom
+    card.delete
+  end
+
   def sort
     new_list_id = sort_params[:new_list_id].split('_')[1]
     target_card = Card.find(sort_params[:card_id])
@@ -37,6 +44,10 @@ class CardsController < ApplicationController
 
   def card_params
     params.require(:card).permit(:name, :details).merge(params.permit(:list_id))
+  end
+
+  def destroy_params
+    params.permit(:id)
   end
 
   def sort_params
