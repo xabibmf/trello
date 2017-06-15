@@ -18,10 +18,10 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    card = Card.find(destroy_params[:id])
-    card.activities.destroy_all
-    card.move_to_bottom
-    card.delete
+    @target_card = Card.find(destroy_params[:id])
+    @target_card.activities.destroy_all
+    @target_card.move_to_bottom
+    @target_card.delete
   end
 
   def sort
