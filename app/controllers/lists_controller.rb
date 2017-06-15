@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
-  before_action :set_board, only: [:new, :create, :update]
-  before_action :set_lists, only: :new
+  before_action :set_board, only: [:new, :create, :update, :destroy]
+  before_action :set_lists, only: [:new, :destroy]
   before_action :set_list, only: :update
 
   def new
@@ -36,6 +36,7 @@ class ListsController < ApplicationController
     @list = List.new
     @card = Card.new
     @activity = Activity.new
+    render :new
   end
 
   def sort
