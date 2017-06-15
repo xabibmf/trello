@@ -2,11 +2,10 @@ class ListsController < ApplicationController
   before_action :set_board, only: [:new, :create, :update, :destroy]
   before_action :set_lists, only: [:new, :destroy]
   before_action :set_list, only: :update
+  before_action :set_new_model, only: [:new, :destroy]
 
   def new
-    @list = List.new
-    @card = Card.new
-    @activity = Activity.new
+    set_new_model
   end
 
   def create
@@ -33,9 +32,7 @@ class ListsController < ApplicationController
     list.cards.destroy_all
     list.move_to_bottom
     list.delete
-    @list = List.new
-    @card = Card.new
-    @activity = Activity.new
+    set_new_model
     render :new
   end
 
@@ -69,5 +66,11 @@ class ListsController < ApplicationController
 
   def set_list
     @list = List.find(params[:id])
+  end
+
+  def set_new_model
+    @list = List.new
+    @card = Card.new
+    @activity = Activity.new
   end
 end
