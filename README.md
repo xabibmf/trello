@@ -20,9 +20,6 @@
 |:--|:-:|:--|
 |manager|string|null: false|
 |name|string|null: false|
-|contracting|string|-|
-|website|string|-|
-|details|text|-|
 |color|string|null: false|
 
 ### Association
@@ -36,6 +33,7 @@
 |:--|:-:|:--|
 |name|string|null: false|
 |board_id|integer|null: false, foreign_key: true|
+|position|integer|-|
 
 ### Association
 
@@ -49,6 +47,8 @@
 |name|string|null: false|
 |details|text|-|
 |list_id|string|null: false, foreign_key: true|
+|position|integer|-|
+|deadline|date|-|
 
 ### Association
 
