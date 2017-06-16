@@ -11,10 +11,21 @@
           = f.text_field :name, autofocus: true, class: "card-edit-form", maxlength: 15
       = fa_icon "times lg", class: "modal-close"
     .modal__deadline
-      = form_for card, url: board_list_card_path(@board, list, card), remote: true do |f|
-        = f.label :deadline
-        = f.text_field :deadline, class: "form-control datepicker"
-        = f.submit "保存", class: "card-deadline-edit-submit"
+      .modal__deadline__label
+        = fa_icon "calendar-check-o"
+        期限
+      .modal__deadline__link
+        - if card.deadline
+          %span.modal__deadline__date.overdue
+            = card.deadline
+        - else
+          %span
+            期限を設定する
+      .modal__deadline__date__form
+        = form_for card, url: board_list_card_path(@board, list, card), remote: true do |f|
+          = f.text_field :deadline, class: "form-control datepicker"
+          = f.submit "保存", class: "card-deadline-edit-submit"
+        = fa_icon "times lg", class: "card-deadline-close"
     .modal__edit-link
       - if card.details
         %span.modal__edit-link__details

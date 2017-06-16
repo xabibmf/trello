@@ -58,6 +58,17 @@ $(document).on('turbolinks:load', function() {
         $(this).parent().parent().removeClass('is-shown');
       });
     });
+
+    $(this).next().find('.modal__deadline__link span').on('click', function() {
+      var target = $(this).parent();
+      target.addClass('hidden');
+      target.next().addClass('is-shown');
+    });
+    $(this).next().find('.card-deadline-close').on('click', function() {
+      var target = $(this).parent();
+      target.removeClass('is-shown');
+      target.prev().removeClass('hidden');
+    });
   });
 
   times.on('click', function() {
