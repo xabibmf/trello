@@ -43,7 +43,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:name, :details).merge(params.permit(:list_id))
+    params.require(:card).permit(:name, :details, :deadline).merge(params.permit(:list_id))
   end
 
   def destroy_params

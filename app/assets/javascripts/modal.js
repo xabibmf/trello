@@ -67,4 +67,6 @@ $(document).on('turbolinks:load', function() {
   mask.on('click', function() {
     maskClose();
   });
+
+  $('.datepicker').datepicker();
 });
