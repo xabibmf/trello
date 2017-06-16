@@ -261,3 +261,9 @@
     height: 100%;
   }
 }
+
+.card.hiddena .lists__item__content__card {
+  background: #e2e4e6;
+  height: 1px;
+  padding: 0;
+}
