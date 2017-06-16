@@ -8,6 +8,9 @@
       = link_to "削除", { controller: "lists", action: "destroy", board_id: @board.id, id: list.id }, method: :delete, class: "list-delete-button__link", remote: true
   .lists__item__content
     = render partial: "lists/card", collection: list.cards, locals: { list: list}
+    - if list.cards.length < 2
+      .card.hiddena
+        .lists__item__content__card
     .create__card
       = form_for @card, url: board_list_cards_path(@board, list), remote: true do |f|
         = f.text_field :name, maxlength: 15
