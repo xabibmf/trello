@@ -20,4 +20,4 @@ if (details == "" || details == null) {
 }
 target.find('.modal__deadline__link').removeClass('hidden');
 target.find('.modal__deadline__date__form').removeClass('is-shown');
-target.find('.modal__deadline__link').html('<span class="modal__deadline__date"><%= card.deadline %></span>');
+target.find('.modal__deadline__link').html('<span class="modal__deadline__date"><%= @card.deadline %></span>');
