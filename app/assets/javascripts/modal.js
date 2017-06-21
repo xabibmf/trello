@@ -80,7 +80,17 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('.datepicker').datepicker({
-    dateFormat: "yy/mm/dd",
-    showOn: 'focus'
+    dateFormat: "yy-mm-dd",
+    showOn: 'focus',
+    defaultDate: 2,
+    minDate: "-1y",
+    maxDate: "3y",
+    onSelect: function test(date, inst) {
+      $('.datepicker').each(function() {
+        if (!$(this).parent().parent().parent().parent().hasClass('hidden')) {
+          $(this).val(date);
+        }
+      });
+    }
   });
 });

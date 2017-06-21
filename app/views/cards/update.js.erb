@@ -34,19 +34,16 @@ if (deadline == "" || deadline == null) {
   deadline = new Date('<%= @card.deadline %> 00:00:00');
   var date = new Date();
   if ("<%= @card.deadline == Date.current() %>" == "true") {
-    console.log("同じ");
     target.find('.modal__deadline__date').removeClass('overdue');
     target.prev().removeClass('overdue');
     target.find('.modal__deadline__date').addClass('is-approaching');
     target.prev().addClass('is-approaching');
   } else if (deadline.getTime() < date) {
-    console.log("期限切れ");
     target.find('.modal__deadline__date').removeClass('is-approaching');
     target.prev().removeClass('is-approaching');
     target.find('.modal__deadline__date').addClass('overdue');
     target.prev().addClass('overdue');
   } else {
-    console.log("それ以外");
     target.find('.modal__deadline__date').removeClass('overdue');
     target.prev().removeClass('overdue');
     target.find('.modal__deadline__date').removeClass('is-approaching');
