@@ -27,6 +27,7 @@ function hiddenDeadlineForm() {
 var deadline = "<%= @card.deadline %>";
 if (deadline == "" || deadline == null) {
   hiddenDeadlineForm();
+  target.find('.modal__deadline__link').html('<span>期限を設定する</span>')
 } else {
   hiddenDeadlineForm();
   target.find('.modal__deadline__link').html('<span class="modal__deadline__date"><%= @card.deadline %></span>');
@@ -53,7 +54,7 @@ if (deadline == "" || deadline == null) {
   }
 }
 
-target.find('.modal__deadline__date').on('click', function() {
+target.find('.modal__deadline__link span').on('click', function() {
   var target = $(this).parent();
   target.addClass('hidden');
   target.next().addClass('is-shown');
