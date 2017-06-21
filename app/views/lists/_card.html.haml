@@ -16,8 +16,15 @@
         期限
       .modal__deadline__link
         - if card.deadline
-          %span.modal__deadline__date.overdue
-            = card.deadline
+          - if card.deadline == Date.current()
+            %span.modal__deadline__date.is-approaching
+              = card.deadline
+          - elsif card.deadline < Date.current()
+            %span.modal__deadline__date.overdue
+              = card.deadline
+          - else
+            %span.modal__deadline__date
+              = card.deadline
         - else
           %span
             期限を設定する
