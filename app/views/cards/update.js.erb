@@ -52,3 +52,14 @@ if (deadline == "" || deadline == null) {
     target.prev().removeClass('is-approaching');
   }
 }
+
+target.find('.modal__deadline__date').on('click', function() {
+  var target = $(this).parent();
+  target.addClass('hidden');
+  target.next().addClass('is-shown');
+});
+target.find('.card-deadline-close').on('click', function() {
+  var target = $(this).parent();
+  target.removeClass('is-shown');
+  target.prev().removeClass('hidden');
+});
