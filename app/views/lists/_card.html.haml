@@ -9,6 +9,9 @@
     - else
       .lists__item__content__card
         = card.name
+  - else
+    .lists__item__content__card
+      = card.name
   .modal.hidden{class: "card-id-#{card.id}"}
     .modal__header
       = fa_icon "edit 2x"
