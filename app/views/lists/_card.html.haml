@@ -1,6 +1,14 @@
 .card{ id: "card_#{card.id}", data: { update_url: board_list_card_sort_path(@board, list, card) } }
-  .lists__item__content__card
-    = card.name
+  - if card.deadline
+    - if card.deadline == Date.current()
+      .lists__item__content__card.is-approaching
+        = card.name
+    - elsif card.deadline < Date.current()
+      .lists__item__content__card.overdue
+        = card.name
+    - else
+      .lists__item__content__card
+        = card.name
   .modal.hidden{class: "card-id-#{card.id}"}
     .modal__header
       = fa_icon "edit 2x"
