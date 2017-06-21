@@ -18,6 +18,37 @@ if (details == "" || details == null) {
   hiddenForm();
   target.find('.modal__edit-link').html('<span class="modal__edit-link__details">詳細説明</span>\n<span class="modal__edit-link__text">編集</span><div class="modal__edit-link__text__details"><%= @card.details %></div>');
 }
-target.find('.modal__deadline__link').removeClass('hidden');
-target.find('.modal__deadline__date__form').removeClass('is-shown');
-target.find('.modal__deadline__link').html('<span class="modal__deadline__date"><%= @card.deadline %></span>');
+
+function hiddenDeadlineForm() {
+  target.find('.modal__deadline__link').removeClass('hidden');
+  target.find('.modal__deadline__date__form').removeClass('is-shown');
+}
+
+var deadline = "<%= @card.deadline %>";
+if (deadline == "" || deadline == null) {
+  hiddenDeadlineForm();
+} else {
+  hiddenDeadlineForm();
+  target.find('.modal__deadline__link').html('<span class="modal__deadline__date"><%= @card.deadline %></span>');
+  deadline = new Date('<%= @card.deadline %> 00:00:00');
+  var date = new Date();
+  if ("<%= @card.deadline == Date.current() %>" == "true") {
+    console.log("同じ");
+    target.find('.modal__deadline__date').removeClass('overdue');
+    target.prev().removeClass('overdue');
+    target.find('.modal__deadline__date').addClass('is-approaching');
+    target.prev().addClass('is-approaching');
+  } else if (deadline.getTime() < date) {
+    console.log("期限切れ");
+    target.find('.modal__deadline__date').removeClass('is-approaching');
+    target.prev().removeClass('is-approaching');
+    target.find('.modal__deadline__date').addClass('overdue');
+    target.prev().addClass('overdue');
+  } else {
+    console.log("それ以外");
+    target.find('.modal__deadline__date').removeClass('overdue');
+    target.prev().removeClass('overdue');
+    target.find('.modal__deadline__date').removeClass('is-approaching');
+    target.prev().removeClass('is-approaching');
+  }
+}
