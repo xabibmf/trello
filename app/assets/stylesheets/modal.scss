@@ -89,6 +89,12 @@
       }
       &__form {
         display: none;
+        .form-control {
+          background-color: #e2e4e6;
+          padding: 4px;
+          border: none;
+          border-radius: 3px;
+        }
         &.is-shown {
           display: block;
         }

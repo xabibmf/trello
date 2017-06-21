@@ -18,3 +18,6 @@ if (details == "" || details == null) {
   hiddenForm();
   target.find('.modal__edit-link').html('<span class="modal__edit-link__details">詳細説明</span>\n<span class="modal__edit-link__text">編集</span><div class="modal__edit-link__text__details"><%= @card.details %></div>');
 }
+target.find('.modal__deadline__link').removeClass('hidden');
+target.find('.modal__deadline__date__form').removeClass('is-shown');
+target.find('.modal__deadline__link').html('<span class="modal__deadline__date"><%= card.deadline %></span>');
