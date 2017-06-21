@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function() {
       target.next().addClass('is-shown');
     });
     $(this).next().find('.card-deadline-close').on('click', function() {
-      var target = $(this).parent().parent();
+      var target = $(this).parent();
       target.removeClass('is-shown');
       target.prev().removeClass('hidden');
     });
