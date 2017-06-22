@@ -4,7 +4,9 @@ target.find('#list_name').val('');
 target.find('.is-shown').removeClass('is-shown');
 $.each($('.lists__item__newlink'), function() {
   $(this).on('click', function() {
-    $(this).prev().children('.create__card').addClass('is-shown');
+    var target = $(this).prev().children('.create__card');
+    target.addClass('is-shown');
+    target.find('#card_name').focus();
   });
 
   $(this).parent().find('.lists__item__header').on('click', function() {

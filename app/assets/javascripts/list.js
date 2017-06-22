@@ -6,6 +6,7 @@ $(document).on('turbolinks:load', function() {
 
   $('.lists__item__newlist__link').on('click', function() {
     $('.pop-over__list').addClass('is-shown');
+    $(this).next().find('#list_name').focus();
   });
 
   $('.popover-list-close').on('click', function() {
@@ -14,7 +15,9 @@ $(document).on('turbolinks:load', function() {
 
   $.each($('.lists__item__newlink'), function() {
     $(this).on('click', function() {
-      $(this).prev().children('.create__card').addClass('is-shown');
+      var target = $(this).prev().children('.create__card');
+      target.addClass('is-shown');
+      target.find('#card_name').focus();
     });
   });
 
