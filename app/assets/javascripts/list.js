@@ -35,8 +35,16 @@ $(document).on('turbolinks:load', function() {
     });
 
     $(this).find('.list-edit-form').blur(function() {
-      $(this).parent().parent().prev().removeClass('hidden');
-      $(this).parent().parent().removeClass('is-shown');
+      var flg = true;
+      jQuery(":hover").each(function() {
+        if ($(this).hasClass('list-delete-button__link')) {
+          flg = false;
+        }
+      });
+      if (flg) {
+        $(this).parent().parent().prev().removeClass('hidden');
+        $(this).parent().parent().removeClass('is-shown');
+      }
     });
 
     $(this).find('.edit_list').on('submit', function() {

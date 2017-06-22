@@ -16,8 +16,16 @@ $.each($('.lists__item__newlink'), function() {
   });
 
   $(this).parent().find('.list-edit-form').blur(function() {
-    $(this).parent().parent().prev().removeClass('hidden');
-    $(this).parent().parent().removeClass('is-shown');
+    var flg = true;
+    jQuery(":hover").each(function() {
+      if ($(this).hasClass('list-delete-button__link')) {
+        flg = false;
+      }
+    });
+    if (flg) {
+      $(this).parent().parent().prev().removeClass('hidden');
+      $(this).parent().parent().removeClass('is-shown');
+    }
   });
 
   $(this).parent().find('.edit_list').on('submit', function() {
@@ -33,6 +41,7 @@ $('.card-close').each(function() {
 $('.lists').sortable({
   items: $('.lists__item:not(:last-child)'),
   tolerance: "pointer",
+  handle: $('.lists__item__header'),
   update: function(e, ui) {
     item = ui.item;
     item_data = item.data();

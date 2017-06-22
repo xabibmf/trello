@@ -98,7 +98,7 @@ $('.lists__item__content').sortable({
     $('.lists__item').each(function() {
       if ($(this).find('.card').length > 2) {
         $(this).find('.hiddena').remove();
-      } else if ($(this).find('.card').length == 1) {
+      } else if ($(this).find('.card').length == 1　&& $(this).find('.hiddena').length == 0) {
         $(this).find('.lists__item__content').prepend('<div class="card hiddena"><div class="lists__item__content__card"></div></div>');
       }
     });
