@@ -58,6 +58,17 @@ $(document).on('turbolinks:load', function() {
         $(this).parent().parent().removeClass('is-shown');
       });
     });
+
+    $(this).next().find('.modal__deadline__link span').on('click', function() {
+      var target = $(this).parent();
+      target.addClass('hidden');
+      target.next().addClass('is-shown');
+    });
+    $(this).next().find('.card-deadline-close').on('click', function() {
+      var target = $(this).parent();
+      target.removeClass('is-shown');
+      target.prev().removeClass('hidden');
+    });
   });
 
   times.on('click', function() {
@@ -66,5 +77,20 @@ $(document).on('turbolinks:load', function() {
 
   mask.on('click', function() {
     maskClose();
+  });
+
+  $('.datepicker').datepicker({
+    dateFormat: "yy-mm-dd",
+    showOn: 'focus',
+    defaultDate: 2,
+    minDate: "-1y",
+    maxDate: "3y",
+    onSelect: function test(date, inst) {
+      $('.datepicker').each(function() {
+        if (!$(this).parent().parent().parent().parent().hasClass('hidden')) {
+          $(this).val(date);
+        }
+      });
+    }
   });
 });

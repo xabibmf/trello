@@ -57,6 +57,69 @@
     }
   }
 
+  &__deadline {
+    margin-left: 35px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, .4);
+    &__label {
+      margin-bottom: 6px;
+    }
+    &__link {
+      text-decoration: underline;
+      margin-left: 17px;
+      &.hidden {
+        display: none;
+      }
+    }
+    &__date {
+      background-color: #e2e4e6;
+      padding: 4px;
+      color: #111;
+      &.is-approaching {
+        background-color: #e6c60d;
+        color: #fff;
+        text-decoration: underline;
+        text-decoration-color: #fff;
+      }
+      &.overdue {
+        background-color: #cf513d;
+        color: #fff;
+        text-decoration: underline;
+        text-decoration-color: #fff;
+      }
+      &__form {
+        display: none;
+        .form-control {
+          background-color: #e2e4e6;
+          padding: 4px;
+          border: none;
+          border-radius: 3px;
+        }
+        &.is-shown {
+          display: block;
+        }
+      }
+    }
+    .card-deadline-edit-submit {
+      border: none;
+      width: 68px;
+      height: 30px;
+      border-radius: 3px;
+      color: #8c8c8c;
+      outline: 0;
+      margin-right: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      background-image: linear-gradient(rgb(97, 189, 79) 0px, rgb(90,172,68) 100%);
+      opacity: 0.9;
+      box-shadow: 0 2px 0 #3f6f21;
+      color: #fff;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+  }
+
   &__edit-link {
     margin-left: 35px;
     margin-bottom: 20px;

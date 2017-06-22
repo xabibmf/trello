@@ -91,8 +91,17 @@
           background-color: #fff;
           border-radius: 4px;
           padding: 5px;
+          &.is-approaching {
+            background-color: #e6c60d;
+            color: #fff;
+          }
+          &.overdue {
+            background-color: #cf513d;
+            color: #fff;
+          }
           &:hover {
             background-color: #ccc;
+            color: #111;
           }
           &:not(:last-child) {
             margin-bottom: 5px;

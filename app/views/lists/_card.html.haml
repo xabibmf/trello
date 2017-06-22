@@ -1,6 +1,17 @@
 .card{ id: "card_#{card.id}", data: { update_url: board_list_card_sort_path(@board, list, card) } }
-  .lists__item__content__card
-    = card.name
+  - if card.deadline
+    - if card.deadline == Date.current()
+      .lists__item__content__card.is-approaching
+        = card.name
+    - elsif card.deadline < Date.current()
+      .lists__item__content__card.overdue
+        = card.name
+    - else
+      .lists__item__content__card
+        = card.name
+  - else
+    .lists__item__content__card
+      = card.name
   .modal.hidden{class: "card-id-#{card.id}"}
     .modal__header
       = fa_icon "edit 2x"
@@ -10,6 +21,29 @@
         = form_for card, url: board_list_card_path(@board, list, card), remote: true do |f|
           = f.text_field :name, autofocus: true, class: "card-edit-form", maxlength: 15
       = fa_icon "times lg", class: "modal-close"
+    .modal__deadline
+      .modal__deadline__label
+        = fa_icon "calendar-check-o"
+        期限
+      .modal__deadline__link
+        - if card.deadline
+          - if card.deadline == Date.current()
+            %span.modal__deadline__date.is-approaching
+              = card.deadline
+          - elsif card.deadline < Date.current()
+            %span.modal__deadline__date.overdue
+              = card.deadline
+          - else
+            %span.modal__deadline__date
+              = card.deadline
+        - else
+          %span
+            期限を設定する
+      .modal__deadline__date__form
+        = form_for card, url: board_list_card_path(@board, list, card), remote: true do |f|
+          = f.text_field :deadline, class: "form-control datepicker"
+          = f.submit "保存", class: "card-deadline-edit-submit"
+        = fa_icon "times lg", class: "card-deadline-close"
     .modal__edit-link
       - if card.details
         %span.modal__edit-link__details
